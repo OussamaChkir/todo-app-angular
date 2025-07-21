@@ -1,2 +1,0 @@
-export default `*{box-sizing:border-box}body{font-size:15px;font-family:Open Sans,sans-serif;color:#444;background-color:#fefefe;background-image:linear-gradient(#fc6c48,#ef5081);background-repeat:no-repeat;background-size:cover;padding:50px 20px;margin:0;min-height:100vh;position:relative}
-`;
