@@ -1,0 +1,6 @@
+{
+  "routes": {
+    "/todo-app-angular": {},
+    "/todo-app-angular/about": {}
+  }
+}
