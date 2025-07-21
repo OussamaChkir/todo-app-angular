@@ -1,0 +1,45 @@
+.form-todo {
+    display: flex;
+    gap: 10px;
+    overflow: overlay;
+  
+    input {
+      flex: 1;
+      padding: 8px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+  
+      &.invalid {
+        border-color: red;
+      }
+      &:focus{
+        border-color:#007bff;
+        outline: none;
+      }
+      &:focus-visible{
+        border-color:#007bff;
+        outline: none;
+      }
+    }
+  
+    button {
+      padding: 8px 16px;
+      border: none;
+      background-color: #007bff;
+      color: white;
+      border-radius: 4px;
+  
+      &:disabled {
+        background-color: #ccc;
+        cursor: not-allowed;
+      }
+    }
+  }
+  .error {
+    color: red;
+    font-size: 14px;
+    margin: 10px 0;
+  }
+
+  
+  

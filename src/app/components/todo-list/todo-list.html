@@ -1,0 +1,17 @@
+<div class="filters">
+    <button [ngClass]="{'active': (filter$ | async) === 'all'}" (click)="setFilter('all')">Tous</button>
+    <button [ngClass]="{'active': (filter$ | async) === 'active'}" (click)="setFilter('active')">Actifs</button>
+    <button [ngClass]="{'active': (filter$ | async) === 'completed'}" (click)="setFilter('completed')">Terminés</button>
+  </div>
+  <div>
+    Progression : <span class="progress-number">{{ completedPercentage$ | async | number:'1.0-0' }}%</span>
+  </div>
+  <ul class="todo-list">
+    <li *ngFor="let todo of todos$ | async">
+      <input class="todo-checkbox" type="checkbox" [checked]="todo.completed" (change)="toggle(todo.id)">
+      <label></label>
+      <span class="todo-text" [ngClass]="{done: todo.completed}">{{ todo.title }}</span>
+      <button class="delete" (click)="delete(todo.id)">🗑</button>
+    </li>
+  </ul>
+  

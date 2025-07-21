@@ -1,0 +1,132 @@
+ul.todo-list{
+  padding: 0;
+  margin-bottom: 30px;
+
+  li{
+    position: relative;
+  list-style-type: none;
+  display: block;
+  margin: 10px 0;
+  background: #e0e8f5;
+  border-radius: 3px;
+  padding-left: 38px; /* custom checkbox width + 16 */
+  padding-top: 12px;
+  padding-bottom: 12px;
+  padding-right: 49px; /* delete button + 5 */ 
+  overflow: hidden;
+
+  .todo-text{
+    position: relative;
+    display: inline-block;
+    padding: 0 0.5em;
+  }
+
+  .delete{
+    position: absolute;
+    height: 100%;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+    cursor: pointer;
+    opacity: 0;
+    width: 0;
+    background-color: #f56468;
+    color: #fff;
+    transition: all ease-in 0.25s;
+    border: none;
+    z-index: 2;
+  }
+
+  &:hover{
+    .delete{
+      width: 44px;
+      opacity: 1;
+    }
+  }
+
+  .todo-checkbox{
+    position: absolute; 
+    opacity: 0;
+    z-index: 1;
+    inset: 0;
+  }
+  .todo-checkbox + label {
+    position: absolute;
+    cursor: pointer;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 22px;
+    height: 22px;
+    border-radius: 2px;
+    border: 1px solid #cfdcec;
+    background-color: #fff;
+  }
+
+  .todo-checkbox:checked + label:after{
+    position: absolute;
+    content: '';
+    top: 30%;
+    left: 50%;
+    height: 3px;
+    width: 6px;
+    border: solid #fc6c48;
+    border-width: 0 0 2px 2px;
+    transform-origin: center center;
+    transform: rotate(-45deg) translate(-50%, -50%);
+  }
+  
+  .todo-checkbox:checked + label:after{
+    display: block;
+  }
+
+  .todo-checkbox:checked ~ .todo-text{
+    color: #888;
+    text-decoration: line-through
+  }
+
+  }
+}
+
+ul.todo-list.archived li{
+  background: #fff;
+}
+
+.todo-text{
+  position: relative;
+  display: inline-block;
+  padding: 0 0.5em;
+}
+
+.done {
+    text-decoration: line-through;
+  }
+  .filters button {
+    margin-right: 10px;
+  }
+  
+
+  .filters{
+    margin: 10px 0;
+
+    button {
+      border: 0;
+      padding: 3px 8px;
+      background: 0;
+      font-size: 14px;
+      line-height: 1;
+      cursor: pointer;
+      color: #8a9ca5;
+      border-radius: 20px;
+
+      &.active {
+        background-color: #7996a5;
+        color: #fff;
+    }
+  }
+
+  }
+
+  .progress-number{
+    color: #f65c65;
+  }

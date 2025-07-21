@@ -1,0 +1,19 @@
+<form class="form-todo" [formGroup]="todoForm" (ngSubmit)="onSubmit()">
+    <input
+      type="text"
+      formControlName="title"
+      placeholder="Ajouter une tâche"
+      [class.invalid]="todoForm.get('title')?.invalid && todoForm.get('title')?.touched"
+    />
+  
+    <button type="submit" [disabled]="todoForm.invalid">Ajouter</button>
+  
+
+  </form>
+  <div class="error" *ngIf="todoForm.get('title')?.invalid && todoForm.get('title')?.touched">
+    <small *ngIf="todoForm.get('title')?.errors?.['required']">Ce champ est requis.</small>
+    <small *ngIf="todoForm.get('title')?.errors?.['minlength']">
+      Minimum 3 caractères.
+    </small>
+  </div>
+  

@@ -1,0 +1,14 @@
+nav {
+    background: #eee;
+    padding: 1rem;
+    a {
+      margin-right: 1rem;
+      text-decoration: none;
+      color: black;
+      &.active {
+        font-weight: bold;
+        color: #007bff;
+      }
+    }
+  }
+  
